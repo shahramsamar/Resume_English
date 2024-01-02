@@ -1,2 +1,2 @@
-# websiteme
- my site
+# Django
+ How to create in project
