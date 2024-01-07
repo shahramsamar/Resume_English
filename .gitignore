@@ -58,7 +58,7 @@ cover/
 # Django stuff:
 *.log
 local_settings.py
-db.sqlite3
+# db.sqlite3
 db.sqlite3-journal
 
 # Flask stuff:
@@ -143,6 +143,15 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+
+# vscode
+*.vscode
+
+# git
+*.gitignore
+*.gitattributes
+
 
 # PyCharm
 #  JetBrains specific template is maintainted in a separate JetBrains.gitignore that can
