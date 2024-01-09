@@ -9,4 +9,5 @@ class ContactAdmin(admin.ModelAdmin):
     list_filter = ('response',)        
     ordering =['receive_date']
     search_fields =['name','subject']
+    
 admin.site.register(Contact,ContactAdmin)
