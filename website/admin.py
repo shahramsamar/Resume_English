@@ -1,7 +1,12 @@
 from django.contrib import admin
-from website.models import Contact
+from website.models import Contact, BasicInformationModel
 
 # Register your models here.
+
+class BasicInformationAdmin(admin.ModelAdmin):
+        list_display = ('id','age')
+
+    
 class ContactAdmin(admin.ModelAdmin):
     date_hierarchy = 'create_date'
     # empty_value_display = '-empty-'
@@ -11,3 +16,4 @@ class ContactAdmin(admin.ModelAdmin):
     search_fields =['name','message']
     
 admin.site.register(Contact,ContactAdmin)
+admin.site.register(BasicInformationModel)
