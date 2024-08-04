@@ -8,17 +8,25 @@ class BasicInformationModel(models.Model):
         phone_number = models.CharField(max_length=255)
         address = models.CharField(max_length=255)
         language = models.CharField(max_length=255)
+        created_date = models.DateTimeField(auto_now_add =True)
+        updated_date = models.DateTimeField(auto_now=True)
+        # class Meta :
+                # ordering = ['created_date']
+       
+        def __str__(self):
+                return self.email
+       
         
 class Contact(models.Model):
         name = models.CharField(max_length=255)
         email = models.EmailField()
         subject = models.CharField(max_length=255)
         message = models.TextField()
-        create_date = models.DateTimeField(auto_now_add =True)
+        created_date = models.DateTimeField(auto_now_add =True)
         updated_date = models.DateTimeField(auto_now=True)
         
         class Meta :
-                ordering = ['create_date']
+                ordering = ['created_date']
         
         def __str__(self):
                 return self.name

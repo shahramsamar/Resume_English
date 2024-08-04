@@ -8,9 +8,9 @@ class BasicInformationAdmin(admin.ModelAdmin):
 
     
 class ContactAdmin(admin.ModelAdmin):
-    date_hierarchy = 'create_date'
+    date_hierarchy = 'created_date'
     # empty_value_display = '-empty-'
-    list_display = ('name','email','create_date')
+    list_display = ('name','email','created_date')
     list_filter = ('email',)        
     # ordering =['receive_date']
     search_fields =['name','message']
