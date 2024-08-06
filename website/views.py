@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from website.forms import ContactForm
-from website.models import BasicInformationModel
+from website.models import BasicInformationModel, SkillModel
 
 
 # def index_view(request):
@@ -12,11 +12,12 @@ from website.models import BasicInformationModel
 
 
 def index_view(request):
+    skills = SkillModel.objects.all()
     personality  = BasicInformationModel.objects.all()
     if request.method =='POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
     form = ContactForm()        
-    context = {"form":form,'personality':personality}
+    context = {"form":form,'personality':personality,'skills':skills}
     return render(request, 'website/index.html', context)

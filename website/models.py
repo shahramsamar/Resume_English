@@ -69,3 +69,10 @@ class ContactModel(models.Model):
         
         def __str__(self):
                 return self.name
+class  SkillModel(models.Model):
+    title = models.CharField(max_length=255)   
+    level = models.PositiveBigIntegerField(default=50)  
+    
+    
+    def __str__(self):
+        return self.title         
