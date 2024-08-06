@@ -60,7 +60,7 @@
                 <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>{{person.birthday}}</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>{{person.website}}</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>{{person.phone_number}}</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{person.town}}</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{person.location}}</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Language:</strong> <span>{{person.language}}</span></li>
               </ul>
             </div>
@@ -327,48 +327,40 @@
 
       <div class="row">
         <div class="col-lg-6">
-          <h3 class="resume-title">Sumary</h3>
+          <h3 class="resume-title">Summary</h3>
           <div class="resume-item pb-0">
-            <h4>{{name}} {{lastname}}</h4>
-            <p><em>
-              Creative programmer with more than 3 year of experience in design and development and maintenance until final delivery and suppor.</em></p>
-            <p>
+            <h6>
+              {{person.summary}}
+            <h6>
+          </div>
+          {% comment %} {% for education in Education%}
+          <h4 class="resume-item">{{education.title}} </h4>
+          <div class="resume-item pb-0">
+            {% comment %} <h3>{{education.title}}</h3> {% endcomment %}
+            {% comment %} <h5>{{education.major}}</h5>
+            <h6> {{education.from_date}} - {{education.until_date}}</h6>
+            <p><em>{{education.location}}</em></p>
+            <p></p>
+          </div>
+          {% endfor%} {% endcomment %} 
+          <p> </p>
+          {% for education in Education%}
+          <div class="resume-item">
+            <h4>{{education.title}}</h4>
             <ul>
-              <li>{{location}}</li>
-              <li>{{number}}</li>
-              <li>{{email}}</li>
+              <li>{{education.major}}</li>
+              
             </ul>
+            <h5>{{education.from_date}} - {{education.until_date}}</h5>
+            <p><em>{{education.location}}</em></p>
+            <p>
+    
             </p>
           </div>
+          {% endfor%}
 
-          <h3 class="resume-title">Education</h3>
-          <div class="resume-item">
-            <h4>Master's degree &amp; Business management, marketing orientation</h4>
-            <h5>2016 - 2019</h5>
-            <p><em>Islamic Azad University, Shiraz, Iran</em></p>
-            <p></p>
-          </div>
-
-          <div class="resume-item">
-            <h4>Bachelor's degree &amp; Computer Software Engineering</h4>
-            <h5>2010 - 2013</h5>
-            <p><em>Islamic Azad University, Shiraz, Iran</em></p>
-          </div>
-
-          <div class="resume-item">
-            <h4>Associate's degree &amp; Computer Software Engineering</h4>
-            <h5>2007 - 2011</h5>
-            <p><em>Sama's professional technique, Shiraz, Iran</em></p>
-            <p></p>
-          </div>
-
-          <div class="resume-item">
-            <h4>Diploma of Education &amp; Computer Science</h4>
-            <h5>2003 - 2007</h5>
-            <p><em>Darlofonoon Vocational Technical Academy, Shiraz, Iran</em></p>
-          </div>
         </div>
-
+        
         <div class="col-lg-6">
           <h3 class="resume-title">Professional Experience</h3>
           <div class="resume-item">
@@ -445,7 +437,7 @@
     </div>
   </section><!-- End Resume Section -->
 
-  <!-- ======= Services Section ======= -->
+  {% comment %} <!-- ======= Services Section ======= -->
   <section id="services" class="services">
     <div class="container">
 
@@ -506,10 +498,10 @@
       </div>
 
     </div>
-  </section><!-- End Services Section -->
+  </section><!-- End Services Section --> {% endcomment %}
 
   <!-- ======= Portfolio Section ======= -->
-  <section id="portfolio" class="portfolio">
+  {% comment %} <section id="portfolio" class="portfolio">
     <div class="container">
 
       <div class="section-title">
@@ -659,7 +651,7 @@
       </div>
 
     </div>
-  </section><!-- End Portfolio Section -->
+  </section><!-- End Portfolio Section --> {% endcomment %}
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
@@ -676,7 +668,7 @@
           <div class="info-box">
             <i class="bx bx-map"></i>
             <h3>My Address</h3>
-            <p>{{person.town}}</p>
+            <p>{{person.location}}</p>
           </div>
         </div>
 

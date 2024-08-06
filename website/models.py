@@ -38,15 +38,16 @@ class BasicInformationModel(models.Model):
         age = models.PositiveIntegerField()
         email = models.EmailField()
         phone_number = models.CharField(max_length=255)
-        address = models.CharField(max_length=255)
+        location = models.CharField(max_length=255)
         language = models.CharField(max_length=255)
         freelance = models.CharField(max_length=255, choices=FREELANCER_CHOICES,default='Unavailable')
         website = models.CharField(max_length=255)
-        town = models.CharField(max_length=255)
         entertainment = models.CharField(max_length=255)
-        degree = models.CharField(max_length=12, choices=DEGREE_CHOICES)        
+        degree = models.CharField(max_length=12, choices=DEGREE_CHOICES)  
+        summary = models.TextField()
         created_date = models.DateTimeField(auto_now_add =True)
         updated_date = models.DateTimeField(auto_now=True)
+        
        
         class Meta :
                 ordering = ['created_date']
@@ -71,8 +72,25 @@ class ContactModel(models.Model):
                 return self.name
 class  SkillModel(models.Model):
     title = models.CharField(max_length=255)   
-    level = models.PositiveBigIntegerField(default=50)  
+    level = models.PositiveBigIntegerField(default=50)
+    created_date = models.DateTimeField(auto_now_add =True)
+    updated_date = models.DateTimeField(auto_now=True)
     
-    
+    class Meta :
+        ordering = ['created_date']
     def __str__(self):
         return self.title         
+
+class  EducationModel(models.Model):
+    title = models.CharField(max_length=255) 
+    major = models.CharField(max_length=255) 
+    location = models.CharField(max_length=255)
+    from_date = models.IntegerField()
+    until_date = models.IntegerField()
+    
+    class Meta :
+        ordering = ['-from_date']
+
+        
+
+

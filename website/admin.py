@@ -1,9 +1,11 @@
 from django.contrib import admin
-from website.models import ContactModel, BasicInformationModel, SkillModel
+from website.models import ContactModel, BasicInformationModel, SkillModel, EducationModel
 
-# Register your models here.
+class EducationModelAdmin(admin.ModelAdmin):
+    list_display =('id','title','location','from_date','until_date')
+    
 class SkillModelAdmin(admin.ModelAdmin):
-    list_display =('id','title','level')
+    list_display =('id','title','level','created_date','updated_date')
 
 
 class BasicInformationAdmin(admin.ModelAdmin):
@@ -21,3 +23,5 @@ class ContactAdmin(admin.ModelAdmin):
 admin.site.register(ContactModel, ContactAdmin)
 admin.site.register(BasicInformationModel, BasicInformationAdmin)
 admin.site.register(SkillModel, SkillModelAdmin)
+admin.site.register( EducationModel,EducationModelAdmin)
+
