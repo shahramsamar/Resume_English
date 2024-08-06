@@ -33,7 +33,7 @@ class BasicInformationModel(models.Model):
         last_name = models.CharField(max_length=255)
         job_title = models.CharField(max_length=255)
         image = models.ImageField(upload_to='image',default='image/user.jpeg')
-        birthday = models.DateField()        
+        birthday = models.DateField(blank=True, null=True)        
         about_me = models.TextField()
         age = models.PositiveIntegerField()
         email = models.EmailField()
@@ -85,12 +85,22 @@ class  EducationModel(models.Model):
     title = models.CharField(max_length=255) 
     major = models.CharField(max_length=255) 
     location = models.CharField(max_length=255)
-    from_date = models.IntegerField()
-    until_date = models.IntegerField()
+    from_date = models.IntegerField(blank=True, null=True)
+    to_date = models.IntegerField(blank=True, null=True)
     
     class Meta :
         ordering = ['-from_date']
 
         
+class  ProfessionalExperienceModel(models.Model):
+    title = models.CharField(max_length=255) 
+    compony = models.CharField(max_length=255) 
+    location = models.CharField(max_length=255)
+    jobـdescription = models.TextField()
+    from_date = models.IntegerField(blank=True, null=True)
+    to_date = models.IntegerField(blank=True, null=True)
+    
+    class Meta :
+        ordering = ['-from_date']
 
 

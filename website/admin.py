@@ -1,8 +1,11 @@
 from django.contrib import admin
-from website.models import ContactModel, BasicInformationModel, SkillModel, EducationModel
+from website.models import ContactModel, BasicInformationModel, SkillModel, EducationModel, ProfessionalExperienceModel
 
+
+class ProfessionalExperienceAdmin(admin.ModelAdmin):
+    list_display =('id','title','compony','from_date','to_date')
 class EducationModelAdmin(admin.ModelAdmin):
-    list_display =('id','title','location','from_date','until_date')
+    list_display =('id','title','location','from_date','to_date')
     
 class SkillModelAdmin(admin.ModelAdmin):
     list_display =('id','title','level','created_date','updated_date')
@@ -24,4 +27,6 @@ admin.site.register(ContactModel, ContactAdmin)
 admin.site.register(BasicInformationModel, BasicInformationAdmin)
 admin.site.register(SkillModel, SkillModelAdmin)
 admin.site.register( EducationModel,EducationModelAdmin)
+admin.site.register( ProfessionalExperienceModel,ProfessionalExperienceAdmin)
+
 

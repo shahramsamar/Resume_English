@@ -333,16 +333,6 @@
               {{person.summary}}
             <h6>
           </div>
-          {% comment %} {% for education in Education%}
-          <h4 class="resume-item">{{education.title}} </h4>
-          <div class="resume-item pb-0">
-            {% comment %} <h3>{{education.title}}</h3> {% endcomment %}
-            {% comment %} <h5>{{education.major}}</h5>
-            <h6> {{education.from_date}} - {{education.until_date}}</h6>
-            <p><em>{{education.location}}</em></p>
-            <p></p>
-          </div>
-          {% endfor%} {% endcomment %} 
           <p> </p>
           {% for education in Education%}
           <div class="resume-item">
@@ -351,7 +341,7 @@
               <li>{{education.major}}</li>
               
             </ul>
-            <h5>{{education.from_date}} - {{education.until_date}}</h5>
+            <h5>{{education.from_date}} - {{education.to_date}}</h5>
             <p><em>{{education.location}}</em></p>
             <p>
     
@@ -363,74 +353,19 @@
         
         <div class="col-lg-6">
           <h3 class="resume-title">Professional Experience</h3>
+          {% for experience in Experience%}
           <div class="resume-item">
-            <h4> junior python developer</h4>
-            <h5>2023 - Present</h5>
-            <p><em>sisco , Shiraz, Iran </em></p>
+            <h4> {{experience.title}}</h4>
+            <h5>{{experience.from_date}} - {{experience.to_date}}</h5>
+            <p><em>{{experience.compony}} ,{{experience.location}}</em></p>
             <p>
             <ul>
-              <li>Successfully developed and deployed Python applications, showcasing strong programming skills.</li>
-              <li>Played a key role in leveraging the Django web framework to create efficient and user-friendly web solutions. </li>
-              <li>Demonstrated expertise in handling complex data processing with MySQL and web scraping.
-                Utilized regular expressions (regex) to enhance data validation and manipulation.</li>
-              <li>Implemented object-oriented programming principles to optimize parallel processing in Python.</li>
-              <li>Actively contributed to version control and collaboration using Git, ensuring efficient team workflows.
-              </li>
-              <li>Developed and optimized algorithms, resulting in improved application performance and efficiency.
-              </li>
-              <li>Proficiently wrote test cases to ensure the reliability and functionality of code.
-              </li>
-              <li>Implemented effective design patterns to enhance code maintainability and scalability.</li>
+              {{experience.jobـdescription}}
             </ul>
             </p>
-          </div>
-          <div class="resume-item">
-            <h4>Stock Exchange Trader</h4>
-            <h5>2019 - 2023 </h5>
-            <p><em>Dana Sarmayeh, Shiraz, Iran</em></p>
-            <p>
-            <ul>
-              <li>he company is active in the field of services, support, sales, training, research and investigation in the field of financial markets.</li>
-              <li>Training, support, working with financial and investment software</li>
-            </ul>
-            </p>
-          </div>
 
-          <div class="resume-item">
-            <h4>Back up web</h4>
-            <h5>2018 - 2019 </h5>
-            <p><em>Simabshen, Shiraz, Iran</em></p>
-            <p>
-            <ul>
-              <li>The company is active in the field of construction services (design, execution, renovation, completion).</li>
-              <li>Support and maintenance of relevant software and system, working with MySQL, PHP software.</li>
-            </ul>
-            </p>
           </div>
-
-          <div class="resume-item">
-            <h4>Back up web</h4>
-            <h5>2016 - 2017 </h5>
-            <p><em>Tavazon Danesh, Shiraz, Iran</em></p>
-            <p>
-            <ul>
-              <li>The company is active in the field of petroleum gas, design, implementation, support and sales.</li>
-              <li>Responsible for system and network support, determining the access level of people, monitoring and restoring the system, working with PHP, HTML software for changes on the company's website and presenting products and projects on the website.</li>
-            </ul>
-            </p>
-          </div>
-
-          <div class="resume-item">
-            <h4>Network And Equipment Expert</h4>
-            <h5>2014 - 2015 </h5>
-            <p><em>Nakisa, Shiraz, Iran</em></p>
-            <p>
-            <ul>
-              <li>The company is active in the field of software, computer hardware and network (maintenance, configuration).</li>
-              <li>Configuring, maintaining, troubleshooting, computer system and network, preparing driver programs, and doing Visual Basic projects for students.</li>
-            </ul>
-            </p>
-          </div>
+          {% endfor%}
         </div>
       </div>
 

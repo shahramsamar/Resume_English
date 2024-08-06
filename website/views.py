@@ -1,17 +1,11 @@
 from django.shortcuts import render
 from website.forms import ContactForm
-from website.models import BasicInformationModel, SkillModel, EducationModel
-
-
-# def index_view(request):
-#     context ={'name':'shahram', 'lastname':'samar','number':'+98 917 788 3411','email':'shahramsamar2010@gmail.com',
-#               'entertainment':'Travel, Mountaineering,watching a movie','location':'Shiraz, Iran','jobposition':'Backend Developer',
-#               'aboutme':"I'm Shahram Samar. I am a software engineering. I have been working as a Python Developer.Strong engineering professional with a Bachelor's Degree focused on Computer Software Engineering from Azad Islamic University of Shiraz Iran.I'm always open to take up new challenges, helping me to improve myself and making me move forward."}
-#     return render(request, 'website/index.html', context)
+from website.models import BasicInformationModel, SkillModel, EducationModel, ProfessionalExperienceModel
 
 
 
 def index_view(request):
+    Experience = ProfessionalExperienceModel.objects.all()
     Education = EducationModel.objects.all()
     skills = SkillModel.objects.all()
     personality  = BasicInformationModel.objects.all()
@@ -20,5 +14,6 @@ def index_view(request):
         if form.is_valid():
             form.save()
     form = ContactForm()        
-    context = {"form":form,'personality':personality,'skills':skills,'Education':Education}
+    context = {"form":form,'personality':personality,'skills':skills,
+               'Education':Education,'Experience':Experience}
     return render(request, 'website/index.html', context)
