@@ -1,11 +1,11 @@
 from django import forms
-from website.models import Contact
+from website.models import ContactModel
 
 
 class ContactForm(forms.ModelForm):
     
     class Meta:
-        model = Contact
+        model = ContactModel
         fields = '__all__'
         
     

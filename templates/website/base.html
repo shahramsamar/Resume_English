@@ -1,12 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
+{% for person in personality %}
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Shahram Samar</title>
+  <title>{{person.first_name}} {{person.last_name}}</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -36,9 +36,9 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   </head>
-{% block content %}
+  {% block content %}
 
-{% endblock content %}
+  {% endblock content %}
 
 
 <div class="credits">
@@ -46,7 +46,7 @@
     <!-- You can delete the links only if you purchased the pro version. -->
     <!-- Licensing information: https://bootstrapmade.com/license/ -->
     <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/personal-free-resume-bootstrap-template/ -->
-    Designed by <a href="#">Shahram Samar 2023-2024</a>
+    Designed by <a href="#">{{person.first_name}} {{person.last_name}} 2023-2024</a>
   </div>
 
   <!-- Vendor JS Files -->
@@ -60,3 +60,4 @@
 
   <!-- Template Main JS File -->
   <script src="{% static "js/main.js" %}"></script>
+{% endfor%}

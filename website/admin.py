@@ -1,10 +1,10 @@
 from django.contrib import admin
-from website.models import Contact, BasicInformationModel
+from website.models import ContactModel, BasicInformationModel
 
 # Register your models here.
 
 class BasicInformationAdmin(admin.ModelAdmin):
-        list_display = ('id','age')
+        list_display = ('email','created_date')
 
     
 class ContactAdmin(admin.ModelAdmin):
@@ -15,5 +15,5 @@ class ContactAdmin(admin.ModelAdmin):
     # ordering =['receive_date']
     search_fields =['name','message']
     
-admin.site.register(Contact,ContactAdmin)
-admin.site.register(BasicInformationModel)
+admin.site.register(ContactModel,ContactAdmin)
+admin.site.register(BasicInformationModel,BasicInformationAdmin)
