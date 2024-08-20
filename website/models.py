@@ -85,8 +85,8 @@ class  EducationModel(models.Model):
     title = models.CharField(max_length=255) 
     major = models.CharField(max_length=255) 
     location = models.CharField(max_length=255)
-    from_date = models.IntegerField(blank=True, null=True)
-    to_date = models.IntegerField(blank=True, null=True)
+    from_date = models.PositiveBigIntegerField(blank=True, null=True)
+    to_date = models.PositiveBigIntegerField(blank=True, null=True)
     
     class Meta :
         ordering = ['-from_date']
@@ -97,8 +97,8 @@ class  ProfessionalExperienceModel(models.Model):
     compony = models.CharField(max_length=255) 
     location = models.CharField(max_length=255)
     jobـdescription = models.TextField()
-    from_date = models.IntegerField(blank=True, null=True)
-    to_date = models.IntegerField(blank=True, null=True)
+    from_date = models.PositiveBigIntegerField(blank=True, null=True)
+    to_date = models.PositiveBigIntegerField(blank=True, null=True)
     
     class Meta :
         ordering = ['-from_date']

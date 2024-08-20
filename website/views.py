@@ -14,6 +14,9 @@ def index_view(request):
         if form.is_valid():
             form.save()
     form = ContactForm()        
-    context = {"form":form,'personality':personality,'skills':skills,
-               'Education':Education,'Experience':Experience}
+    context = {"form":form,
+               'personality':personality,
+               'skills':skills,
+               'Education':Education,
+               'Experience':Experience}
     return render(request, 'website/index.html', context)

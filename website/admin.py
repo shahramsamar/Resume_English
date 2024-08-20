@@ -3,12 +3,15 @@ from website.models import ContactModel, BasicInformationModel, SkillModel, Educ
 
 
 class ProfessionalExperienceAdmin(admin.ModelAdmin):
-    list_display =('id','title','compony','from_date','to_date')
+    list_display =('id','title','compony',
+                   'from_date','to_date')
 class EducationModelAdmin(admin.ModelAdmin):
-    list_display =('id','title','location','from_date','to_date')
+    list_display =('id','title','location',
+                   'from_date','to_date')
     
 class SkillModelAdmin(admin.ModelAdmin):
-    list_display =('id','title','level','created_date','updated_date')
+    list_display =('id','title','level',
+                   'created_date','updated_date')
 
 
 class BasicInformationAdmin(admin.ModelAdmin):
@@ -18,7 +21,8 @@ class BasicInformationAdmin(admin.ModelAdmin):
 class ContactAdmin(admin.ModelAdmin):
     date_hierarchy = 'created_date'
     # empty_value_display = '-empty-'
-    list_display = ('name','email','created_date')
+    list_display = ('name','email',
+                    'created_date')
     list_filter = ('email',)        
     # ordering =['receive_date']
     search_fields =['name','message']
@@ -26,7 +30,7 @@ class ContactAdmin(admin.ModelAdmin):
 admin.site.register(ContactModel, ContactAdmin)
 admin.site.register(BasicInformationModel, BasicInformationAdmin)
 admin.site.register(SkillModel, SkillModelAdmin)
-admin.site.register( EducationModel,EducationModelAdmin)
-admin.site.register( ProfessionalExperienceModel,ProfessionalExperienceAdmin)
+admin.site.register( EducationModel, EducationModelAdmin)
+admin.site.register( ProfessionalExperienceModel, ProfessionalExperienceAdmin)
 
 
